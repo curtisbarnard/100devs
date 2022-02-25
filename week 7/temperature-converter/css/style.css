@@ -3,16 +3,80 @@
 /*******************************************/
 
 /* Box Model Hack */
-*{
+* {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-
+html {
+  font-size: 62.5%;
+}
+.hidden { 
+  display: none;
+}
+.flex { 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body {
+  font-family: 'Raleway', sans-serif;
+}
 /******************************************
 /* LAYOUT
 /*******************************************/
-
-
-
-/******************************************
-/* ADDITIONAL STYLES
-/*******************************************/
+header {
+  background: rgb(3, 75, 57);
+  height: 10vh;
+  font-size: 20px;
+}
+header + section {
+  background: rgb(3, 75, 57);
+  height: 35vh;
+}
+h1 {
+  text-align: center;
+  margin: 0;
+  font-size: 5rem;
+  font-weight: 300;
+  color: #fff;
+}
+.card {
+  width: 20%;
+  height: 50%;
+  background: #fff;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+form.flex {
+  flex-direction: column;
+  justify-content: space-around;
+  height: 70%;
+}
+form label {
+  font-size: 2rem;
+  padding: 0 30px;
+}
+input[type="text"] {
+  width: 30%;
+  height: 3rem;
+  border: none;
+  border-bottom: 1px solid #333;
+  font-size: 2rem;
+}
+input[type="button"] {
+  height: 3rem;
+  padding: 5px;
+  font-size: 1.6rem;
+}
+h2 {
+  text-align: center;
+  margin: 0;
+  padding: 30px 0;
+  font-size: 5rem;
+  font-weight: 600;
+  color: #000;
+}
+header + section + section {
+  flex-direction: column;
+}

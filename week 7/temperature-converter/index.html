@@ -6,20 +6,36 @@
     	<meta name="keywords" content="one, two, three">
 
 		<title>Title in the tab</title>
-
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
 		<!-- external CSS link -->
 		<link rel="stylesheet" href="css/normalize.css">
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
-		<form>
-			<label for="tempInput"> Temp in celsius: </label>
-			<input id="tempInput" type="text">
-		</form>
-		<button id="convert" type="button" name="button">Convert</button>
-
-		<h2 id="convertedTemp"></h2>
-
+		<header class="flex">
+			<h1>Welcome to the amazing temperature converter</h1>
+		</header>
+		<section class="flex">
+			<div class="card flex">
+				<form class="flex">
+					<label for="tempInput"> Please enter a temperature in celsius</label>
+					<input id="tempInput" type="text" placeholder="ex. 10">
+					<input type="button" id="convert" value="Convert">
+				</form>
+			</div>
+		</section>
+		<section class="flex">
+			<h2 id="convertedTemp"></h2>
+			<img class="hidden veryVeryCold off" src="img/moon.jpg" alt="Crescent moon up close">
+			<img class="hidden veryCold off" src="img/everest.jpg" alt="People at Everest Base Camp">
+			<img class="hidden cold off" src="img/portland-winter.jpg" alt="View of Portland skyline with snow of roofs">
+			<img src="img/portland-summer.jpg" alt="Summer sunset over Portland with Mt. Hood in the background" class="hidden warm off">
+			<img src="img/onsen.jpg" alt="Monkeys soaking in a hotspring" class="hidden hot off">
+			<img src="img/tea.jpg" alt="Hot tea being poured into cups" class="hidden veryHot off">
+			<img src="img/sun.jpg" alt="Close up of the sun" class="hidden veryVeryHot off">
+		</section>
 		<script type="text/javascript" src="js/main.js"></script>
 	</body>
 </html>
