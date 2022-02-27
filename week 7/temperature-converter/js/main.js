@@ -1,10 +1,19 @@
+// variables for images
+const moon = document.querySelector('.veryVeryCold')
+const everest = document.querySelector('.veryCold')
+const pWinter = document.querySelector('.cold')
+const pSummer = document.querySelector('.warm')
+const onsen = document.querySelector('.hot')
+const tea = document.querySelector('.veryHot')
+const sun = document.querySelector('.veryVeryHot')
+
 document.querySelector('#convert').addEventListener('click', conversion)
 
 function conversion() {
     // Get the celsius temp from input
     const celsius = document.querySelector('#tempInput').value
     // run celsius thru math function
-    const outputTemp = celsius * (9/5) + 32
+    const outputTemp = Math.round(celsius * (9/5) + 32)
     // check validitiy
     if (isNaN(outputTemp)) {
         document.querySelector('#convertedTemp').innerText = 'Hey Bozo, put in a number!'
@@ -13,20 +22,69 @@ function conversion() {
         document.querySelector('#convertedTemp').innerText = outputTemp + 'F'
     }
     if (celsius == -127) {
-        document.querySelector('.veryVeryCold').classList.toggle('hidden')
+        moon.classList.toggle('hidden')
+        everest.classList.add('hidden')
+        pWinter.classList.add('hidden')
+        pSummer.classList.add('hidden')
+        onsen.classList.add('hidden')
+        tea.classList.add('hidden')
+        sun.classList.add('hidden')
     }else if (celsius == -17) {
-        document.querySelector('.veryVeryCold').classList.add('hidden')
-        document.querySelector('.veryCold').classList.toggle('hidden')
+        moon.classList.add('hidden')
+        everest.classList.toggle('hidden')
+        pWinter.classList.add('hidden')
+        pSummer.classList.add('hidden')
+        onsen.classList.add('hidden')
+        tea.classList.add('hidden')
+        sun.classList.add('hidden')
     }else if (celsius > 8 && celsius < 13) {
-        document.querySelector('.cold').classList.toggle('hidden')
+        moon.classList.add('hidden')
+        everest.classList.add('hidden')
+        pWinter.classList.toggle('hidden')
+        pSummer.classList.add('hidden')
+        onsen.classList.add('hidden')
+        tea.classList.add('hidden')
+        sun.classList.add('hidden')
     }else if (celsius > 20 && celsius < 27) {
-        document.querySelector('.warm').classList.toggle('hidden')
+        moon.classList.add('hidden')
+        everest.classList.add('hidden')
+        pWinter.classList.add('hidden')
+        pSummer.classList.toggle('hidden')
+        onsen.classList.add('hidden')
+        tea.classList.add('hidden')
+        sun.classList.add('hidden')
     }else if (celsius > 39 && celsius < 42) {
-        document.querySelector('.hot').classList.toggle('hidden')
+        moon.classList.add('hidden')
+        everest.classList.add('hidden')
+        pWinter.classList.add('hidden')
+        pSummer.classList.add('hidden')
+        onsen.classList.toggle('hidden')
+        tea.classList.add('hidden')
+        sun.classList.add('hidden')
     }else if (celsius > 65 && celsius < 100) {
-        document.querySelector('.veryHot').classList.toggle('hidden')
+        moon.classList.add('hidden')
+        everest.classList.add('hidden')
+        pWinter.classList.add('hidden')
+        pSummer.classList.add('hidden')
+        onsen.classList.add('hidden')
+        tea.classList.toggle('hidden')
+        sun.classList.add('hidden')
     }else if (celsius == 5504) {
-        document.querySelector('.veryVeryHot').classList.toggle('hidden')
+        moon.classList.add('hidden')
+        everest.classList.add('hidden')
+        pWinter.classList.add('hidden')
+        pSummer.classList.add('hidden')
+        onsen.classList.add('hidden')
+        tea.classList.add('hidden')
+        sun.classList.toggle('hidden')
+    }else {
+        moon.classList.add('hidden')
+        everest.classList.add('hidden')
+        pWinter.classList.add('hidden')
+        pSummer.classList.add('hidden')
+        onsen.classList.add('hidden')
+        tea.classList.add('hidden')
+        sun.classList.add('hidden')
     }
 }
 

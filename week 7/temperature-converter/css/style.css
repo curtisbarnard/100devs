@@ -25,14 +25,20 @@ body {
 /******************************************
 /* LAYOUT
 /*******************************************/
-header {
+header.flex {
   background: rgb(3, 75, 57);
   height: 10vh;
   font-size: 20px;
+  align-items: flex-end;
 }
 header + section {
   background: rgb(3, 75, 57);
   height: 35vh;
+}
+header + section + section {
+  flex-direction: column;
+  height: 45vh;
+  justify-content: space-around;
 }
 h1 {
   text-align: center;
@@ -77,6 +83,6 @@ h2 {
   font-weight: 600;
   color: #000;
 }
-header + section + section {
-  flex-direction: column;
+img {
+  height: 80%;
 }
