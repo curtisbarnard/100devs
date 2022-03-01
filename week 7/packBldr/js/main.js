@@ -6,14 +6,16 @@ function tellMeItWorked () {
     let elementID = event.target.id
     let elementState = document.getElementById(`${elementID}`).checked
     if (elementState == true) {
-        let currentWeight = document.querySelector('.totalWeight').innerHTML
-        let itemWeight = document.querySelector(`#${elementID} ~ .weight`).innerHTML
-        let newWeight = Math.round((parseFloat(currentWeight) + parseFloat(itemWeight))*100)/100
+        let currentWeight = parseFloat(document.querySelector('.totalWeight').innerHTML)
+        let itemWeight = parseFloat(document.querySelector(`#${elementID} ~ .weight`).innerHTML)
+        let newWeight = Math.round((currentWeight + itemWeight)*100)/100
         document.querySelector('.totalWeight').innerHTML = newWeight
+        document.querySelector(`#${elementID} ~ label`).style.color = '#FF9839'
     }else {
-        let currentWeight = document.querySelector('.totalWeight').innerHTML
-        let itemWeight = document.querySelector(`#${elementID} ~ .weight`).innerHTML
-        let newWeight = Math.round((parseFloat(currentWeight) - parseFloat(itemWeight))*100)/100
+        let currentWeight = parseFloat(document.querySelector('.totalWeight').innerHTML)
+        let itemWeight = parseFloat(document.querySelector(`#${elementID} ~ .weight`).innerHTML)
+        let newWeight = Math.round((currentWeight - itemWeight)*100)/100
         document.querySelector('.totalWeight').innerHTML = newWeight
+        document.querySelector(`#${elementID} ~ label`).style.color = '#fff'
     }
 }
