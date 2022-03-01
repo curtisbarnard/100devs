@@ -1,10 +1,19 @@
-const daypack = document.getElementById('daypack')
-daypack.addEventListener('change', tellMeItWorked)
+document.querySelectorAll('input[type="checkbox"]').forEach( item => {
+    item.addEventListener('change', tellMeItWorked)
+})
 
 function tellMeItWorked () {
-    if (daypack.checked == true) {
-        console.log("checked!")
+    let elementID = event.target.id
+    let elementState = document.getElementById(`${elementID}`).checked
+    if (elementState == true) {
+        let currentWeight = document.querySelector('.totalWeight').innerHTML
+        let itemWeight = document.querySelector(`#${elementID} ~ .weight`).innerHTML
+        let newWeight = Math.round((parseFloat(currentWeight) + parseFloat(itemWeight))*100)/100
+        document.querySelector('.totalWeight').innerHTML = newWeight
     }else {
-        console.log("unchecked!")
+        let currentWeight = document.querySelector('.totalWeight').innerHTML
+        let itemWeight = document.querySelector(`#${elementID} ~ .weight`).innerHTML
+        let newWeight = Math.round((parseFloat(currentWeight) - parseFloat(itemWeight))*100)/100
+        document.querySelector('.totalWeight').innerHTML = newWeight
     }
 }

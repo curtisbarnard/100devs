@@ -146,5 +146,6 @@ input[type="checkbox"] {
   cursor: pointer;
 }
 input[type="checkbox"]:checked {
-  background: #fff;
+  background: no-repeat center center/cover url(../img/checkmark.png);
+  background-size: 85%;
 }
