@@ -1,0 +1,150 @@
+/* Box Model Hack */
+*{
+  box-sizing: border-box;
+}
+/* Base Styles */
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: 'Baloo Bhai 2', sans-serif;
+}
+
+/* Main Page */
+header {
+  height: 75px;
+  color: #fff;
+  background: #FF9839;
+  display: flex;
+  align-items: center;
+}
+h1 {
+  font-size: 3.6rem;
+  font-weight: 600;
+  padding-left: 30px;
+}
+h2 {
+  font-size: 2.4rem;
+  font-weight: 500;
+  color: #303030;
+}
+main {
+  height: calc(100vh - 75px);
+  display: flex;
+  flex-direction: column;
+}
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 70%;
+}
+img {
+  height: 30%;
+}
+main section + section {
+  background: #303030;
+  height: 30%;
+  justify-content: center;
+}
+p {
+  color: #fff;
+  font-size: 2rem;
+  max-width: 225px;
+  line-height: 150%;
+  padding-bottom: 20px;
+}
+a {
+  color: #fff;
+  font-size: 2.4rem;
+  font-weight: 600;
+  text-decoration: none;
+  background: #FF9839;
+  border-radius: 10px;
+  height: 40px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* List page */
+.items {
+  background: #303030;
+  color: #fff;
+  height: 95%;
+  font-size: 2rem;
+}
+.itemContainer {
+  width: 90%;
+  max-width: 600px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.stats {
+  background: #fff;
+  height: 5%;
+  font-size: 2rem;
+}
+.statsContainer {
+  width: 90%;
+  max-width: 600px;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.items h2 {
+  color: #fff;
+  border-left: 2px solid #FF9839;
+  padding-left: 5px;
+  margin: 10px 0;
+}
+.items p {
+  min-width: 100%;
+  padding-top: 20px;
+}
+li {
+  padding: 5px 0;
+  display: flex;
+  justify-content: space-between;
+}
+label {
+  flex-basis: 70%;
+  display: flex;
+  justify-content: flex-start;
+}
+.weight,
+.totalWeight {
+  flex-basis: 10%;
+  display: flex;
+  justify-content: flex-start;
+}
+h3 {
+  font-weight: 500;
+  flex-basis: 77%;
+  display: flex;
+  justify-content: flex-end;
+}
+.stats span {
+  font-weight: 600;
+}
+input[type="checkbox"] {
+  appearance: none;
+  background: #303030;
+  margin: 0;
+  width: 1em;
+  height: 1em;
+  border: 1px solid #fff;
+  border-radius: 2px;
+  transform: translateY(0.15em);
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+}
+input[type="checkbox"]:checked {
+  background: #fff;
+}
