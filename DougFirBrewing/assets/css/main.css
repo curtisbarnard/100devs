@@ -2098,9 +2098,14 @@ input, select, textarea {
 			width: 100%;
 		}
 
-			.image.fit img {
+			.image.fit img,
+			.image.cover img {
 				width: 100%;
 			}
+
+		.image.cover {
+			object-fit: cover;
+		}
 
 /* List */
 
@@ -2295,14 +2300,6 @@ input, select, textarea {
 			ul.icons.major li {
 				padding-right: 3.5em;
 			}
-
-				@media screen and (max-width: 736px) {
-
-					ul.icons.major li {
-						/* padding: 0 1em !important; TESTING WITHOUT*/ 
-					}
-
-				}
 
 /* Table */
 
@@ -3387,7 +3384,6 @@ input, select, textarea {
 			position: absolute;
 			right: 0;
 			top: 0;
-			vertical-align: middle;
 			width: 7em;
 		}
 
@@ -3862,7 +3858,7 @@ input, select, textarea {
 
 	#footer {
 		padding: 6em 0 4em 0 ;
-		background-color: #1d242a;
+		background-color: rgba(34, 34, 34, 1);
 		text-align: center;
 	}
 
