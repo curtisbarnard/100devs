@@ -1825,7 +1825,7 @@ input, select, textarea {
 		display: block;
 		font-size: 0.9em;
 		font-weight: 600;
-		margin: 0 0 1em 0;
+		margin: 1em 0 1em 0;
 	}
 
 	input[type="text"],
@@ -2044,6 +2044,18 @@ input, select, textarea {
 	width: 5em;
 }
 
+@media all and (max-width: 580px) {
+	.icons {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-evenly;
+		align-content: space-between;
+	}
+	.icons.major li {
+		flex-basis: 50%;
+		padding: 1em 0 !important; 
+	}
+}
 		
 
 /* Image */
@@ -2103,7 +2115,7 @@ input, select, textarea {
 		}
 
 	ul {
-		list-style: disc;
+		list-style: none;
 		margin: 0 0 2em 0;
 		padding-left: 1em;
 	}
@@ -2287,7 +2299,7 @@ input, select, textarea {
 				@media screen and (max-width: 736px) {
 
 					ul.icons.major li {
-						padding: 0 1em !important;
+						/* padding: 0 1em !important; TESTING WITHOUT*/ 
 					}
 
 				}
@@ -2395,6 +2407,7 @@ input, select, textarea {
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
+		margin-top: 1em;
 	}
 
 		input[type="submit"]:hover,
@@ -3777,10 +3790,10 @@ input, select, textarea {
 
 	#main > header {
 		padding: 12em 0 10em 0 ;
-		background-image: -moz-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
-		background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
-		background-image: -ms-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
-		background-image: linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
+		background-image: -moz-linear-gradient(top, rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url("../../images/banner.jpg");
+		background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url("../../images/banner.jpg");
+		background-image: -ms-linear-gradient(top, rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url("../../images/banner.jpg");
+		background-image: linear-gradient(top, rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url("../../images/banner.jpg");
 		background-attachment: fixed;
 		background-position: center center;
 		background-repeat: no-repeat;
@@ -3867,8 +3880,24 @@ input, select, textarea {
 	#footer .label {
 		padding-left: 5px;
 	}
-	#footer a {
+	footer a {
 		border-bottom: 0;
+	}
+	footer h4,
+	.attribution,
+	.attribution a {
+		color: rgba(255, 255, 255, 0.5);
+	}
+	footer h4 {
+		font-weight: 400;
+		font-size: .8rem;
+	}
+	.attribution {
+		font-size: 0.8rem;
+	}
+	.attribution a:hover {
+		color: rgba(255, 255, 255, 1);
+		border-bottom: 1px dotted #fff ;
 	}
 
 		#footer .copyright {
@@ -3928,6 +3957,12 @@ input, select, textarea {
 				padding: 3em 2em 1em 2em ;
 			}
 
+		}
+
+		@media all and (max-width: 550px) {
+			#footer ul.icons li {
+				flex-basis: 50%;
+			}
 		}
 
 /* Landing */
