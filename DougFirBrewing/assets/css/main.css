@@ -2098,14 +2098,9 @@ input, select, textarea {
 			width: 100%;
 		}
 
-			.image.fit img,
-			.image.cover img {
+			.image.fit img {
 				width: 100%;
 			}
-
-		.image.cover {
-			object-fit: cover;
-		}
 
 /* List */
 
@@ -3812,6 +3807,47 @@ input, select, textarea {
 			#main > header p a {
 				color: inherit;
 			}
+
+	.beerInfo {
+		width: 100%;
+		height: 100%;
+		color: #fff;
+		background: rgba(0, 0, 0, .5);
+		position: absolute;
+		top: 0;
+		left: 50;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		border-radius: 3px;
+		font-size: 1rem;
+		opacity: 0;
+		transition: opacity .3s ease;
+	}
+	span.image.fit:hover .beerInfo {
+		opacity: 1;
+	}
+	#beerHero span:first-of-type {
+		font-size: 3em;
+		line-height: 1em;
+		font-weight: 600;
+	}
+	#beerHero span:last-of-type {
+		font-size: 1.8em;
+		line-height: 1em;
+		font-weight: 400;
+	}
+	.beerName {
+		font-size: 1.3em;
+		line-height: 1.3em;
+	}
+	.beerABV {
+		font-size: .9em;
+		line-height: 1em;
+	}
+
+
 
 		@media screen and (max-width: 1680px) {
 
