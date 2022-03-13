@@ -2949,11 +2949,25 @@ input, select, textarea {
 					background-color: rgba(255, 255, 255, 0.2);
 				}
 
-			@media screen and (max-width: 736px) {
+			@media screen and (max-width: 536px) {
 
 				.wrapper.style1 .features li {
 					border-top-color: rgba(0, 0, 0, 0.125);
 				}
+				.wrapper.style1 {
+					height: calc(100vh - 3em);
+				}
+				.wrapper.style1 .inner {
+					height: 100%;
+					display: flex;
+					flex-direction: column;
+					justify-content: space-around;
+				}
+				.wrapper.style1 .icons {
+					flex-grow: 1;
+					align-content: space-around;
+				}
+
 
 			}
 
@@ -3689,7 +3703,6 @@ input, select, textarea {
 
 			#banner {
 				padding: 7em 3em 5em 3em ;
-				height: auto;
 				min-height: 0;
 			}
 
@@ -3835,7 +3848,6 @@ input, select, textarea {
 		background: rgba(0, 0, 0, .5);
 		position: absolute;
 		top: 0;
-		left: 50;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -3861,13 +3873,51 @@ input, select, textarea {
 	.beerName {
 		font-size: 1.3em;
 		line-height: 1.3em;
+		text-align: center;
 	}
 	.beerABV {
 		font-size: .9em;
 		line-height: 1em;
 	}
 
+		@media all and (max-width: 800px) {
+			.beerInfo {
+				width: 100%;
+				height: inherit;
+				padding: 0.5rem;
+				opacity: 1;
+				bottom: 0;
+				top: inherit;
+			}
+			.beerName {
+				font-size: 1.2em;
+				line-height: 1.2em;
+			}
+			.beerABV {
+				font-size: .8em;
+				line-height: 1em;
+			}
+			.row > .col-4 {
+				width: 50%;
+			}
+		}
 
+		@media all and (max-width: 700px) {
+			.beerName,
+			#beerHero span:first-of-type {
+				font-size: 1.3em;
+				line-height: 1.3em;
+				font-weight: 400;
+			}
+			.beerABV,
+			#beerHero span:last-of-type {
+				font-size: .9em;
+				line-height: 1em;
+			}
+			.row > .col-4 {
+				width: 100%;
+			}
+		}
 
 		@media screen and (max-width: 1680px) {
 
