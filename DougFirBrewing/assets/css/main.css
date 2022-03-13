@@ -2011,6 +2011,13 @@ input, select, textarea {
 		}
 
 /* Icon */
+.phone {
+	height: 1rem;
+	padding-right: 5px;
+	position: relative;
+	top: 5px;
+	fill: rgb(34, 34, 34);
+}
 .fir {
 	background: url(images/fir\ -\ freepik.png);
 }
