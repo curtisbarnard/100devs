@@ -2149,7 +2149,14 @@ input, select, textarea {
 	dl {
 		margin: 0 0 2em 0;
 	}
-
+.hours {
+	width: 15rem;
+}
+.hours li {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
 /* Actions */
 
 	ul.actions {
@@ -3799,6 +3806,12 @@ input, select, textarea {
 		text-align: center;
 	}
 
+	#main .visitus {
+		background-image: -moz-linear-gradient(top, rgba(0,0,0,0.7), rgba(0,0,0,0.8)), url("../../images/visitus-banner.jpg");
+		background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.7), rgba(0,0,0,0.8)), url("../../images/visitus-banner.jpg");
+		background-image: -ms-linear-gradient(top, rgba(0,0,0,0.7), rgba(0,0,0,0.8)), url("../../images/visitus-banner.jpg");
+		background-image: linear-gradient(top, rgba(0,0,0,0.7), rgba(0,0,0,0.8)), url("../../images/visitus-banner.jpg");
+	}
 		#main > header h2 {
 			font-size: 1.75em;
 			margin: 0 0 0.5em 0;
