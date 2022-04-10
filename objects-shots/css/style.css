@@ -1,0 +1,52 @@
+/******************************************
+/* CSS
+/*******************************************/
+
+/* Box Model Hack */
+*{
+  box-sizing: border-box;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+.results {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.results svg {
+  width: 75px;
+}
+
+.cocktails {
+  width: 400px;
+  display: flex;
+  overflow-x: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+.cocktails > section {
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  max-width: 400px;
+  margin-right: 50px;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+img{
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.hidden {
+  visibility: hidden;
+}
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
