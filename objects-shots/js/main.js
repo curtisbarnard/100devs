@@ -20,8 +20,9 @@ function getDrink () {
                 </section>
             `;
         }
-    console.log(data)
-    toggleHidden('.navigateDrinkRight')
+    // console.log(data)
+    document.querySelector('.navigateDrinkLeft').classList.add('hidden')
+    document.querySelector('.navigateDrinkRight').classList.remove('hidden')
 })
 }
 
@@ -29,10 +30,20 @@ function toggleHidden (domItem) {
     document.querySelector(domItem).classList.toggle('hidden')
 }
 
+let test = 0
 function scrollRight () {
-    writeArrowLinks(getCurrentLinks().map(element => +element + 1))
+    if (document.querySelector('.navigateDrinkLeft').classList.contains('hidden')){
+        toggleHidden('.navigateDrinkLeft')
+    }
+    if (test !== 0) {
+        writeArrowLinks(getCurrentLinks().map(element => +element + 1))
+    }
+    test += 1
 }
 function scrollLeft () {
+    if (document.querySelector('.navigateDrinkRight').classList.contains('hidden')){
+        toggleHidden('.navigateDrinkRight')
+    }
     writeArrowLinks(getCurrentLinks().map(element => +element - 1))
 }
 function getCurrentLinks () {
@@ -44,6 +55,5 @@ function writeArrowLinks (arr) {
 }
 
 
-// TODO hide right arrow when on last card
-//  TODO when new drink searched reset arrows
 // TODO right arrow is skipping cocktail #2
+// TODO hide right arrow when on last card
