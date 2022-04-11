@@ -1,4 +1,6 @@
 import { setSearchFocus } from './searchBar';
+import { getSearchTerm } from './dataFunctions';
+import { retrieveSearchResults } from './dataFunctions';
 
 document.addEventListener('readystatechange', (event) => {
   if (event.target.readyState === 'complete') {
@@ -10,7 +12,7 @@ const initApp = () => {
   // set the focus on text input
   setSearchFocus();
 
-  // 3 listeners clear text
+  // TODO 3 listeners clear text
 
   const form = document.getElementById('searchBar');
   form.addEventListener('submit', submitTheSearch);
@@ -19,7 +21,7 @@ const initApp = () => {
 // Procedural 'worklfow' function
 const submitTheSearch = (event) => {
   event.preventDefault();
-  // delete search results
+  // TODO delete search results
   // process the search
   processTheSearch();
   // set the focus
@@ -28,6 +30,10 @@ const submitTheSearch = (event) => {
 
 // Procedural
 const processTheSearch = async () => {
-  // clear the stats line
+  // TODO clear the stats line
   const searchTerm = getSearchTerm();
+  if (searchTerm === '') return;
+  const resultArray = await retrieveSearchResults(searchTerm);
+  if (resultArray.length) // TODO build search results
+  // TODO set stats line
 };
