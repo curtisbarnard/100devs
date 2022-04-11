@@ -30,7 +30,7 @@
   <body>
     <main class="flex flexColumn">
       <h1 class="offscreen">tanSachu a Wikipedia powered search engine</h1>
-      <section class="searchEntry">
+      <section class="searchEntry flex flexColumn">
         <h2 class="offscreen">Search Term Entry</h2>
         <div class="logo" aria-hidden="true">tanSachu</div>
         <form id="searchBar" class="searchBar">
@@ -57,20 +57,20 @@
           </button>
         </form>
       </section>
-      <section class="results">
+      <section class="results flex flexColumn">
         <h2 class="offscreen">Search Results</h2>
         <div class="statsBar">
           <div id="stats" class="stats" aria-live="assertive"></div>
         </div>
         <div id="searchResults" class="searchResults">
-          <div class="reusltItem">
+          <div class="resultItem flex flexColumn">
             <div class="resultTitle">
               <a href="">Greater Kyoto</a>
             </div>
             <div class="resultContents">
               <div class="resultImage">
                 <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Kyoto_city1.jpg/200px-Kyoto_city1.jpg"
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Kyoto_city1.jpg/50px-Kyoto_city1.jpg"
                   alt="Kyoto"
                 />
               </div>
@@ -85,7 +85,7 @@
         </div>
       </section>
     </main>
-    <footer>
+    <footer class="flex flexCenter">
       <p>
         <span
           >Powered by
