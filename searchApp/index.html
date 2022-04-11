@@ -5,14 +5,30 @@
     <meta name="description" content="This is where your description goes" />
     <meta name="keywords" content="one, two, three" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>tanSachu Search</title>
 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome CDN Link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <!-- external CSS link -->
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <main>
+    <main class="flex flexColumn">
       <h1 class="offscreen">tanSachu a Wikipedia powered search engine</h1>
       <section class="searchEntry">
         <h2 class="offscreen">Search Term Entry</h2>
@@ -29,7 +45,7 @@
             tabindex="0"
             aria-label="clear searchbar entry"
           >
-            X
+            <i class="fa-solid fa-xmark"></i>
           </div>
           <button
             id="searchButton"
@@ -37,7 +53,7 @@
             type="submit"
             aria-label="Submit search button"
           >
-            Search
+            <i class="fa-solid fa-magnifying-glass"></i>
           </button>
         </form>
       </section>
