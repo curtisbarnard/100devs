@@ -1,19 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-    	<meta charset="utf-8">
-    	<meta name="description" content="This is where your description goes">
-    	<meta name="keywords" content="one, two, three">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Title in the tab</title>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="This is where your description goes" />
+    <meta name="keywords" content="one, two, three" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tanSachu Search</title>
 
-		<!-- external CSS link -->
-		<link rel="stylesheet" href="css/reset.css">
-		<link rel="stylesheet" href="css/style.css">
-	</head>
-	<body>
-		
+    <!-- external CSS link -->
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <main>
+      <h1 class="offscreen">tanSachu a Wikipedia powered search engine</h1>
+      <section class="searchEntry">
+        <h2 class="offscreen">Search Term Entry</h2>
+        <div class="logo" aria-hidden="true">tanSachu</div>
+        <form id="searchBar" class="searchBar">
+          <label for="search" class="offscreen"
+            >Enter a search term of phrase</label
+          >
+          <input type="text" id="search" autocomplete="off" />
+          <div
+            id="clear"
+            class="none button clear"
+            role="button"
+            tabindex="0"
+            aria-label="clear searchbar entry"
+          >
+            X
+          </div>
+          <button
+            id="searchButton"
+            class="button searchButton"
+            type="submit"
+            aria-label="Submit search button"
+          >
+            Search
+          </button>
+        </form>
+      </section>
+      <section class="results">
+        <h2 class="offscreen">Search Results</h2>
+        <div class="statsBar">
+          <div id="stats" class="stats" aria-live="assertive"></div>
+        </div>
+        <div id="searchResults" class="searchResults">
+          <div class="reusltItem">
+            <div class="resultTitle">
+              <a href="">Greater Kyoto</a>
+            </div>
+            <div class="resultContents">
+              <div class="resultImage">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Kyoto_city1.jpg/200px-Kyoto_city1.jpg"
+                  alt="Kyoto"
+                />
+              </div>
+              <div class="reusltText">
+                <p class="resultDescription">
+                  Greater Kyoto is a metropolitan area in Japan encompassing
+                  Kyoto,...
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>
+        <span
+          >Powered by
+          <a href="https://www.wikipedia.org" target="_blank">
+            Wikipedia</a
+          ></span
+        >
+      </p>
+    </footer>
 
-		<script type="text/javascript" src="js/main.js"></script>
-	</body>
+    <script type="text/javascript" src="js/main.js"></script>
+  </body>
 </html>
