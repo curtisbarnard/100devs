@@ -1,5 +1,5 @@
 export const getSearchTerm = () => {
-  const rawSearchTerm = document.getElementById('search').ariaValueMax.trim();
+  const rawSearchTerm = document.getElementById('search').value.trim();
   const regex = /[ ]{2,}/gi;
   const searchTerm = rawSearchTerm.replaceAll(regex, ' ');
   return searchTerm;
@@ -19,7 +19,9 @@ export const retrieveSearchResults = async (searchTerm) => {
 const getWikiSearchString = (searchTerm) => {
   const maxChars = getMaxChars();
   const rawSearchString = `https://en.wikipedia.org/w/api.php?action=query&format=json&prop=pageimages%7Cextracts&generator=search&exchars=${maxChars}&exlimit=20&exintro=1&explaintext=1&gsrsearch=${searchTerm}&gsrlimit=20&origin=*`;
-  const searchString = encodeURI(rawSearchString);
+  const searchString = rawSearchString;
+  // For some reason the URI encoding below messes up the query
+  // const searchString = encodeURI(rawSearchString);
   return searchString;
 };
 

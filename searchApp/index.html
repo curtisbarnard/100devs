@@ -33,11 +33,11 @@
       <section class="searchEntry flex flexColumn">
         <h2 class="offscreen">Search Term Entry</h2>
         <div class="logo" aria-hidden="true">tanSachu</div>
-        <form id="searchBar" class="searchBar">
+        <form id="searchBar" class="searchBar" role="search">
           <label for="search" class="offscreen"
             >Enter a search term of phrase</label
           >
-          <input type="text" id="search" autocomplete="off" />
+          <input type="text" id="search" autocomplete="off" role="searchbox" />
           <div
             id="clear"
             class="none button clear"
@@ -63,7 +63,8 @@
           <div id="stats" class="stats" aria-live="assertive"></div>
         </div>
         <div id="searchResults" class="searchResults">
-          <div class="resultItem flex flexColumn">
+          <!-- Code below used for initial stlying -->
+          <!-- <div class="resultItem flex flexColumn">
             <div class="resultTitle">
               <a href="">Greater Kyoto</a>
             </div>
@@ -81,7 +82,7 @@
                 </p>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
       </section>
     </main>

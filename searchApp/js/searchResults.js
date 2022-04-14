@@ -42,7 +42,7 @@ const createResultImage = (result) => {
   const resultImage = document.createElement('div');
   resultImage.classList.add('resultImage');
   const img = document.createElement('img');
-  img.source = result.img;
+  img.src = result.img;
   img.alt = result.title;
   resultImage.append(img);
   return resultImage;

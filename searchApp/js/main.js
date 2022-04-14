@@ -4,8 +4,7 @@ import {
   showClearTextButton,
   clearPushListener,
 } from './searchBar.js';
-import { getSearchTerm } from './dataFunctions.js';
-import { retrieveSearchResults } from './dataFunctions.js';
+import { getSearchTerm, retrieveSearchResults } from './dataFunctions.js';
 import {
   deleteSearchResults,
   buildSearchResults,
