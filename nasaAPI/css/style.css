@@ -1,5 +1,5 @@
 /* Box Model Hack */
-*{
+* {
   box-sizing: border-box;
 }
 html {
@@ -12,6 +12,13 @@ body {
 }
 
 /* Layout */
+.nasaImage {
+  width: 100vw;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
 main {
   display: flex;
   justify-content: space-evenly;
@@ -33,4 +40,3 @@ h2 {
 p {
   font-size: 1.8rem;
 }
-
