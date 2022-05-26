@@ -15,11 +15,26 @@ MongoClient.connect(connectionString)
     console.log('Connected to database');
     const db = client.db('my-quotes');
     const quotesCollection = db.collection('quotes');
+
+    // Express option for parsing form data
     app.use(bodyParser.urlencoded({ extended: true }));
+    // Setting Express template engine
+    app.set('view engine', 'ejs');
+
+    // getting things from the database
     app.get('/', (request, response) => {
-      response.sendFile(__dirname + '/index.html');
+      // response.sendFile(__dirname + '/index.html');
+      quotesCollection
+        .find()
+        .toArray()
+        .then((results) => {
+          console.log(results);
+          response.render('index.ejs', { quotes: results });
+        })
+        .catch((err) => console.error(err));
     });
 
+    // Sending things to the database
     app.post('/quotes', (req, res) => {
       quotesCollection
         .insertOne(req.body)
@@ -29,6 +44,7 @@ MongoClient.connect(connectionString)
         })
         .catch((err) => console.error(err));
     });
+    // running the server
     app.listen(port, function () {
       console.log(`Node is doing its thang on port ${port}`);
     });
