@@ -10,16 +10,19 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const port = 8000;
 
+// middleware
+app.use(express.static('public'));
+app.use(bodyParser.json());
+// Express option for parsing form data
+app.use(bodyParser.urlencoded({ extended: true }));
+// Setting Express template engine
+app.set('view engine', 'ejs');
+
 MongoClient.connect(connectionString)
   .then((client) => {
     console.log('Connected to database');
     const db = client.db('my-quotes');
     const quotesCollection = db.collection('quotes');
-
-    // Express option for parsing form data
-    app.use(bodyParser.urlencoded({ extended: true }));
-    // Setting Express template engine
-    app.set('view engine', 'ejs');
 
     // getting things from the database
     app.get('/', (request, response) => {
@@ -28,7 +31,6 @@ MongoClient.connect(connectionString)
         .find()
         .toArray()
         .then((results) => {
-          console.log(results);
           response.render('index.ejs', { quotes: results });
         })
         .catch((err) => console.error(err));
@@ -44,9 +46,33 @@ MongoClient.connect(connectionString)
         })
         .catch((err) => console.error(err));
     });
+
+    // Updating things on the server
+    app.put('/quotes', (req, res) => {
+      quotesCollection
+        .findOneAndUpdate(
+          { name: 'Curtis' },
+          {
+            $set: {
+              name: req.body.name,
+              quote: req.body.quote,
+            },
+          },
+          {
+            upsert: true,
+          }
+        )
+        .then((result) => {
+          res.json('Success');
+        })
+        .catch((error) => console.error(error));
+    });
+
     // running the server
     app.listen(port, function () {
       console.log(`Node is doing its thang on port ${port}`);
     });
   })
   .catch((err) => console.log(err));
+
+// TODO CRUD - UPDATE @ https://zellwk.com/blog/crud-express-mongodb/
