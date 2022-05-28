@@ -68,6 +68,19 @@ MongoClient.connect(connectionString)
         .catch((error) => console.error(error));
     });
 
+    // Deleting things from the server
+    app.delete('/quotes', (req, res) => {
+      quotesCollection
+        .deleteOne({ name: req.body.name })
+        .then((result) => {
+          if (result.deletedCount === 0) {
+            return res.json('No quotes to delete');
+          }
+          res.json("Deleted Ron Swanson's Quote");
+        })
+        .catch((err) => console.error(err));
+    });
+
     // running the server
     app.listen(port, function () {
       console.log(`Node is doing its thang on port ${port}`);
