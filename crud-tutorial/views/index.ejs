@@ -4,41 +4,44 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css" />
     <title>My CRUD App</title>
   </head>
   <body>
     <h1>awwwww CRUD!</h1>
-    <section>
-      <form action="/quotes" method="POST">
-        <input type="text" name="name" placeholder="Name" />
-        <input type="text" name="quote" placeholder="Quote" />
-        <button type="submit">Submit</button>
-      </form>
-      <h2>Quotes</h2>
+    <main>
+      <section>
+        <form action="/quotes" method="POST">
+          <input type="text" name="name" placeholder="Name" />
+          <input type="text" name="quote" placeholder="Quote" />
+          <button type="submit">Submit</button>
+        </form>
+        <h2>Quotes</h2>
 
-      <ul class="quotes">
-        <!-- Loop through quotes -->
-        <% for(let i = 0; i < quotes.length; i++) {%>
-        <li class="quote">
-          <!-- Output name from the iterated quote object -->
-          <span><%= quotes[i].name %></span>:
-          <!-- Output quote from the iterated quote object -->
-          <span><%= quotes[i].quote %></span>
-        </li>
-        <% } %>
-      </ul>
-    </section>
-    <section>
-      <h2>Swansonify</h2>
-      <p>Click below and see what happens</p>
-      <button id="update-button">Swansonify</button>
-    </section>
-    <section>
-      <h2>Remove Mr. Swanson</h2>
-      <p>This will remove a Swanson quote if there is one.</p>
-      <button id="delete-button">Delete Swanson Quote</button>
-      <span id="message"></span>
-    </section>
+        <ul class="quotes">
+          <!-- Loop through quotes -->
+          <% for(let i = 0; i < quotes.length; i++) {%>
+          <li class="quote">
+            <!-- Output name from the iterated quote object -->
+            <span><%= quotes[i].name %></span>:
+            <!-- Output quote from the iterated quote object -->
+            <span><%= quotes[i].quote %></span>
+          </li>
+          <% } %>
+        </ul>
+      </section>
+      <section>
+        <h2>Swansonify</h2>
+        <p>Click below and see what happens</p>
+        <button id="update-button">Swansonify</button>
+      </section>
+      <section>
+        <h2>Remove Mr. Swanson</h2>
+        <p>This will remove a Swanson quote if there is one.</p>
+        <button id="delete-button">Delete Swanson Quote</button>
+        <span id="message"></span>
+      </section>
+    </main>
     <script src="/main.js"></script>
   </body>
 </html>
